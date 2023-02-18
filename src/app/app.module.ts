@@ -8,13 +8,20 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClienteService } from './clientes/cliente.service';
 import { HttpClientModule } from '@angular/common/http'
+import { RouterModule, Routes } from '@angular/router';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
+
+const RUTAS: Routes = [
+  {path:'clientes', component: ClientesComponent},
+  {path:'proveedores', component: ProveedoresComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, FooterComponent, DirectivaComponent, ClientesComponent
+    AppComponent, HeaderComponent, FooterComponent, DirectivaComponent, ClientesComponent, ProveedoresComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, RouterModule.forRoot(RUTAS)
   ],
   providers: [ClienteService],
   bootstrap: [AppComponent]
