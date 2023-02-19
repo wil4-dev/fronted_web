@@ -6,12 +6,12 @@ import { ClienteService } from './cliente.service';
   selector: 'app-clientes',
   templateUrl: './clientes.component.html'
 })
-export class ClientesComponent {
-  clientes: Cliente[] = [];
+export class ClientesComponent{
+  clientes: Cliente[];
 
-  constructor(private clienteService:ClienteService){
+  constructor(private clienteService:ClienteService){     
     this.clienteService.getClientes().subscribe(
-      clientes => this.clientes = clientes
+      clientes => {this.clientes = clientes}
     );
   }
 }

@@ -1,1 +1,14 @@
-<p>proveedores works!</p>
+<div class="container">
+    <div class="card-group" style="display:flex; justify-content: center;">
+        <div *ngFor="let p of proveedores" style="margin-right:28px;">
+            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header text-center" style="font-weight: bold;">Proveedor {{p.nombre}}</div>
+                <div class="card-body">              
+                  <p class="card-text">Vende: {{p.vende}}</p>
+                  <p class="card-text">Dirección: {{p.direccion}}</p>
+                  <p class="card-text">Telf: {{p.telefono}}</p>
+                </div>
+            </div>
+        </div>        
+    </div>    
+</div>

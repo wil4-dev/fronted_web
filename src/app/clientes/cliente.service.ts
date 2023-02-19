@@ -9,10 +9,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ClienteService {
 
-  private urlListarCLientes:string = 'http://localhost:8080/api/clientes';
+  private urlListarCLientes:string = "http://localhost:8080/api/clientes";
 
   constructor(private http:HttpClient) { }
 
+  // GET
   getClientes() : Observable<Cliente[]> {
     //return of(CLIENTES);
     return this.http.get<Cliente[]>(this.urlListarCLientes);

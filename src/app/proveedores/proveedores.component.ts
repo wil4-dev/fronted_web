@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Proveedor } from './proveedor';
+import { ProveedorService } from './proveedor.service';
 
 @Component({
   selector: 'app-proveedores',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./proveedores.component.css']
 })
 export class ProveedoresComponent {
+  proveedores:Proveedor[];
 
+  constructor(private proveedorService:ProveedorService){
+    this.proveedorService.getProveedores().subscribe(
+      p => this.proveedores = p
+    );
+  }
 }

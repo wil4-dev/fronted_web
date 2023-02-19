@@ -10,6 +10,7 @@ import { ClienteService } from './clientes/cliente.service';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { ProveedorService } from './proveedores/proveedor.service';
 
 const RUTAS: Routes = [
   {path:'clientes', component: ClientesComponent},
@@ -23,7 +24,7 @@ const RUTAS: Routes = [
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(RUTAS)
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, ProveedorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
