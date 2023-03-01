@@ -1,8 +1,13 @@
-<div class="container">
+
+<div class="container"> 
+  <br><h2 class="text-center" style="font-size: 40px;">{{ titulo }}</h2><br><br>
   <div class="card border-primary mb-3">
     <div class="card-header">CLIENTES</div>
     <div class="card-body text-primary">
-      <h5 class="card-title">Listado de Clientes</h5>
+      <div class="col-sm-6">
+        <button class="btn btn-primary" role="button" [routerLink]="['form']">Agregar</button>
+      </div><br>
+      <h5 class="card-title" style="margin-bottom: 16px;">Listado de Clientes</h5>      
       <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -11,6 +16,8 @@
                 <th>apellido</th>
                 <th>email</th>
                 <th>fecha</th>
+                <th>editar</th>
+                <th>eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +27,12 @@
                 <td>{{cliente.apellido}}</td>
                 <td>{{cliente.email}}</td>
                 <td>{{cliente.fechaCreacion}}</td>
+                <td>
+                  <button class="btn btn-primary" type="button" name="button" [routerLink]="['form',cliente.id]">Editar</button>
+                </td>
+                <td>
+                  <button class="btn btn-primary" type="button" name="button" (click)="delete(cliente)">Eliminar</button>
+                </td>
             </tr>
         </tbody>
       </table>      

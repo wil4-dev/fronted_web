@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Simulación Clientes - Proveedores';
-  curso:String = "TDS N4A";
-  profesor:String = "Ing. Carmen Tacuri";
+  
 }

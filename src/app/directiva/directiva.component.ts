@@ -11,6 +11,7 @@ export class DirectivaComponent {
   listaTemasC:String[] = ['Creación de un proyecto','Errores Sintácticos y Lógicos'];
 
   habilitar:boolean = true;
+  titulo = "Directivas";
 
   // cambia el valor cada que se pulsa el boton
   setHabilitar(){

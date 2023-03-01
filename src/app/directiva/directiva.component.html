@@ -1,23 +1,27 @@
-<button class="btn btn-primary my-3" (click)="setHabilitar()">{{habilitar==true ? 'Ocultar' : 'Mostrar'}}</button>
 
-<div class="card">
-    <div class="card-header">
-        <h3>LISTADO DE CURSOS</h3>
+<div class="container">
+    <br><h2 class="text-center" style="font-size: 40px;">{{ titulo }}</h2><br>
+    <button class="btn btn-primary my-3" (click)="setHabilitar()">{{habilitar==true ? 'Ocultar' : 'Mostrar'}}</button>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>LISTADO DE CURSOS</h3>
+        </div>
+        <!-- muestra todo el contenido cuando habilitar vale true -->
+        <ul class="list-group" *ngIf="habilitar==true">
+            <li class="list-group-item"><h5>TypeScript</h5></li>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let temas of listaTemasTS">{{temas}}</li>
+            </ul>
+            <li class="list-group-item"><h5>JavaScript</h5></li>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let temas of listaTemasJS">{{temas}}</li>
+            </ul>
+            <li class="list-group-item"><h5>C#</h5></li>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let temas of listaTemasC">{{temas}}</li>
+            </ul>        
+        </ul>      
     </div>
-    <!-- muestra todo el contenido cuando habilitar vale true -->
-    <ul class="list-group" *ngIf="habilitar==true">
-        <li class="list-group-item"><h5>TypeScript</h5></li>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let temas of listaTemasTS">{{temas}}</li>
-        </ul>
-        <li class="list-group-item"><h5>JavaScript</h5></li>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let temas of listaTemasJS">{{temas}}</li>
-        </ul>
-        <li class="list-group-item"><h5>C#</h5></li>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let temas of listaTemasC">{{temas}}</li>
-        </ul>        
-    </ul>      
 </div>
-<br><br><br>
+

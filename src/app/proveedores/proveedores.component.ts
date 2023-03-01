@@ -8,6 +8,7 @@ import { ProveedorService } from './proveedor.service';
   styleUrls: ['./proveedores.component.css']
 })
 export class ProveedoresComponent {
+  titulo = "Proveedores";
   proveedores:Proveedor[];
 
   constructor(private proveedorService:ProveedorService){
